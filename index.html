@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f2ed">
+    <meta name="description" content="A calm, simple Pomodoro timer to help you focus.">
+    <title>Pomodoro — Make space to focus</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Pomodoro home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>little focus</span>
+        </a>
+        <span class="topbar-note">A little progress adds up.</span>
+      </header>
+
+      <section class="timer-card" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">YOUR TIME, WELL SPENT</p>
+          <h1 id="page-title">Make space to focus.</h1>
+          <p class="subtitle">One thing at a time. You’ve got this.</p>
+        </div>
+
+        <div class="mode-switch" role="group" aria-label="Timer mode">
+          <button class="mode-button is-selected" type="button" data-mode="focus" aria-pressed="true">Focus</button>
+          <button class="mode-button" type="button" data-mode="short" aria-pressed="false">Short break</button>
+          <button class="mode-button" type="button" data-mode="long" aria-pressed="false">Long break</button>
+        </div>
+
+        <div class="timer" aria-label="Time remaining">
+          <svg class="timer-ring" viewBox="0 0 240 240" aria-hidden="true">
+            <circle class="ring-track" cx="120" cy="120" r="108"></circle>
+            <circle class="ring-progress" cx="120" cy="120" r="108"></circle>
+          </svg>
+          <div class="timer-face">
+            <span class="timer-caption" id="timer-caption">TIME TO FOCUS</span>
+            <span class="timer-display" id="timer-display" role="timer" aria-live="off">25:00</span>
+            <span class="timer-hint" id="timer-hint">Ready when you are</span>
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button class="start-button" id="start-button" type="button">
+            <span class="play-icon" aria-hidden="true">▶</span>
+            <span>Start focus</span>
+          </button>
+          <button class="reset-button" id="reset-button" type="button" aria-label="Reset timer">↺</button>
+        </div>
+
+        <div class="session-summary" aria-live="polite">
+          <span class="session-dot" aria-hidden="true">✳</span>
+          <span><strong id="session-count">0</strong> focus sessions completed</span>
+          <span class="summary-divider" aria-hidden="true"></span>
+          <span id="cycle-count">0 of 4</span>
+        </div>
+      </section>
+
+      <footer class="footer-note">
+        <span>Focus for 25 minutes. Rest. Repeat.</span>
+      </footer>
+    </main>
+  </body>
+</html>
